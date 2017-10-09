@@ -1,0 +1,25 @@
+---
+title: "Week 3 Assignment"
+author: "PanMud"
+date: "October 8, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Sunspots recorded for each year from "sunspots.year" dataset
+
+```{r plotly, echo = FALSE}
+suppressPackageStartupMessages(library(stats)) 
+suppressPackageStartupMessages(library(graphics)) 
+suppressPackageStartupMessages(suppressWarnings(library(plotly)))
+## Compare the monthly series
+p <- plot_ly(x=time(sunspot.year), y=sunspot.year, type="bar", name="Sunspots") %>% 
+    layout(yaxis=list(title="Sunspots"),xaxis=list(title="Year"))
+
+p
+```
+
+## Thanks
